@@ -26,7 +26,7 @@ function App() {
         <div>개발 Blog</div>
       </div>
       <div className="list">
-        <h3> {글제목[0]} <span onClick={ 제목바꾸기 }>👍</span> {따봉} </h3>  
+        <h3> {글제목[0]} <span onClick={ () => { 따봉변경(따봉+1) } }>👍</span> {따봉} </h3>  
         <p>7월 27일 발행</p>
         <hr/>
       </div>
@@ -42,8 +42,21 @@ function App() {
       </div>
       <button onClick={ 제목바꾸기 }>글 제목 변경</button>
       <button onClick={ 글정렬 }>글 정렬</button>
+
+      <Modal></Modal>
     </div>
   );
+}
+
+function Modal() {
+  return (
+    <div className="modal">
+      <h2>제목</h2>
+      <p>날짜</p>
+      <p>상세내용</p>
+    </div>
+  )
+  
 }
 
 export default App;
